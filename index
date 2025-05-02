@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Sana, My Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(#ffe6f0, #ffffff);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #ff99cc;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      font-family: 'Sacramento', cursive;
+      font-size: 3rem;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .heart {
+      width: 20px;
+      height: 20px;
+      background: red;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: rotate(45deg);
+      animation: float 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: red;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {transform: translateY(0) rotate(45deg); opacity: 1;}
+      100% {transform: translateY(-100vh) rotate(45deg); opacity: 0;}
+    }
+    .poem {
+      background: #fff0f5;
+      padding: 2rem;
+      border-radius: 16px;
+      font-style: italic;
+      line-height: 1.8;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 1.2rem;
+    }
+    audio {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+  <header>
+    For Sana, My Love 💖
+  </header>
+
+  <section class="section">
+    <h2>Our Story</h2>
+    <p>
+      From the moment we met, something clicked. Your smile, your laugh,
+      the way you say my name—it’s all magic. This site is my little surprise for you,
+      a love letter in digital form, made just for you, Sana.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>A Poem Just for You 🌹</h2>
+    <div class="poem">
+      In your eyes, I found my skies,<br>
+      With every laugh, my spirits rise.<br>
+      You are the dream I live each day,<br>
+      My heart’s song in every way.<br><br>
+      Through every moment, near or far,<br>
+      I love you just the way you are.<br>
+      Forever yours, beneath the moon’s hue,<br>
+      My sweetest Sana, I cherish you. 💕
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>A Message to You 💌</h2>
+    <p>
+      Dear Sana, I just want you to know how deeply I care about you.
+      You're the light in my life, the reason behind my smiles,
+      and the person I want to share all my tomorrows with.
+      I love you endlessly. 💕
+    </p>
+  </section>
+
+  <footer>
+    Made with all my love for Sana ♥️
+  </footer>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/01/04/audio_78c58673b6.mp3?filename=en-nuit-videoclub-145947.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Floating hearts animation
+    const heartsContainer = document.getElementById('hearts');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
